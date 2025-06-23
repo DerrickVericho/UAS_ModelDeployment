@@ -73,17 +73,6 @@ with open(preprocessor, 'rb') as f:
 async def predict(input: Input):
     try:
         data = pd.DataFrame([input.dict()])
-        
-        # Map binary categorical
-        gender_map = {'Male': 1, 'Female': 0}
-        boolean_map = {'yes': 1, 'no': 0}
-        
-        # Encode data input & preprocess
-        data['Gender'] = data['Gender'].map(gender_map)
-        data['family_history_with_overweight'] = data['family_history_with_overweight'].map(boolean_map)
-        data['FAVC'] = data['FAVC'].map(boolean_map)
-        data['SMOKE'] = data['SMOKE'].map(boolean_map)
-        data['SCC'] = data['SCC'].map(boolean_map)
         encoded = preprocessor.transform(data)
         
         # Prediction

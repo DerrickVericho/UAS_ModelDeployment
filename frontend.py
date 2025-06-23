@@ -13,8 +13,6 @@ with st.sidebar:
     st.title("Obesity Prediction")
     st.markdown("---")
     page = st.radio("Navigation", ["Predict Obesity Level", "Test Cases"])
-    st.markdown("---")
-    st.info("This application predicts booking status based on input parameters.")
     
 if page == "Predict Obesity Level":
     with st.form("prediction_form"):
