@@ -8,7 +8,6 @@ st.title("Obesity Level Prediction Web App")
 st.write("🔎 Masukkan data di bawah ini untuk memprediksi tingkat obesitas Anda!")
 
 # Input form
-
 with st.sidebar:
     st.title("Obesity Prediction")
     st.markdown("---")
@@ -63,11 +62,11 @@ if page == "Predict Obesity Level":
         with col4:
             faf   = st.slider(
                 "Physical activity (days/week) (FAF)",
-                0, 7, 3
+                0.0, 3.0, 1.0, step=0.1
             )
             tue   = st.slider(
                 "Tech use per day (hours) (TUE)",
-                0.0, 24.0, 2.0, step=0.5
+                0.0, 2.0, 1.0, step=0.1
             )
             calc  = st.selectbox(
                 "Alcohol consumption (CALC)",
